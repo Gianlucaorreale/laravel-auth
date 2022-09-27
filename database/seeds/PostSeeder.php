@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Database\Seeder;
+
 
 class PostSeeder extends Seeder
 {
@@ -11,6 +13,10 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
+        for($i=0; $i<10; $i++){
+          $new_post = new Post();
+
+          $new_post -> save();
+        }
     }
 }
