@@ -2,13 +2,13 @@
 
 @section('content')
 
-<header>
-    
-    <div class="container">
-       <h1>Lista Post</h1>
-    </div>
+<header class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista Post</h1>
+    <a class="btn btn-success" href="{{route('admin.posts.create')}}">
+      <i class="fa-solid fa-plus mr-2"></i>Nuovo Post
+    </a>
 </header>
-<div class="container">
+
 <table class="table table-striped table-dark">
 <thead>
 <tr>
@@ -48,6 +48,6 @@
 
 </tbody>
 </table>
-    </div>
+  
 
 @endsection
