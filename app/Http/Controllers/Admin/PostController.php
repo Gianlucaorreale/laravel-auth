@@ -86,6 +86,6 @@ class PostController extends Controller
 
         return redirect()->route('admin.posts.index')
         ->with('message', 'il post è stato eliminato con successo')
-        ->with('type', 'success');
+        ->with('type', 'danger');
     }
 }
