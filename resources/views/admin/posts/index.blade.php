@@ -2,9 +2,12 @@
 
 @section('content')
 <header>
+    
     <div class="container">
-    <h1>Lista Post</h1>
-
+       <h1>Lista Post</h1>
+    </div>
+</header>
+<div class="container">
 <table class="table table-striped table-dark">
 <thead>
 <tr>
@@ -38,5 +41,5 @@
 </tbody>
 </table>
     </div>
-</header>
+
 @endsection
