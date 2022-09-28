@@ -25,7 +25,11 @@
   <td>{{$post->slug}}</td>
   <td>{{$post->created_at}}</td>
   <td>{{$post->updated_at}}</td>
-  <td></td>
+  <td>
+    <a class="btn btn-sm btn-primary ml-2" href="{{route('admin.posts.show', $post)}}">
+      <i class="fa-solid fa-eye mr-2"></i>vedi
+    </a>
+</td>
 </tr>
 @empty
 <tr><td colspan="6"><h3 class="text-center">Nessun Post</h3></td></tr>
