@@ -25,7 +25,7 @@
         </a>
     </div>
     <div class="d-flex align-items-center justify-content-end">
-         <form action="{{ route('admin.posts.destroy', $post->id ) }}" method="POST">
+         <form action="{{ route('admin.posts.destroy', $post->id ) }}" method="POST" class="delete-form">
             @csrf
             @method('DELETE')
              <button class="btn btn-danger" type="submit">

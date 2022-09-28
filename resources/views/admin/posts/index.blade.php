@@ -1,13 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if(session('message'))
-  <div class="container">
-  <div class="alert alert-{{session('type') ?? 'info' }}">
-      {{ session('message') }}
-  </div>
-  </div>
-@endif
+
 <header>
     
     <div class="container">
@@ -35,10 +29,17 @@
   <td>{{$post->slug}}</td>
   <td>{{$post->created_at}}</td>
   <td>{{$post->updated_at}}</td>
-  <td>
-    <a class="btn btn-sm btn-primary ml-2" href="{{route('admin.posts.show', $post)}}">
+  <td class="d-flex justify-content-end">
+    <a class="btn btn-sm btn-primary ml-2 mr-2" href="{{route('admin.posts.show', $post)}}">
       <i class="fa-solid fa-eye mr-2"></i>vedi
     </a>
+    <form action="{{ route('admin.posts.destroy', $post->id ) }}" method="POST" class="delete-form">
+            @csrf
+            @method('DELETE')
+             <button class="btn btn-sm btn-danger" type="submit">
+                 <i class="fa-solid fa-trash mr-2"></i>Elimina
+             </button>
+    </form>
 </td>
 </tr>
 @empty

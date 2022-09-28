@@ -37302,6 +37302,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./delete_confermation */ "./resources/js/delete_confermation.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37346,6 +37348,24 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/delete_confermation.js":
+/*!*********************************************!*\
+  !*** ./resources/js/delete_confermation.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var deleteForms = document.querySelectorAll('.delete-form');
+deleteForms.forEach(function (form) {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var hasConfirmed = confirm('sei sicuro di voler eliminare questo post?');
+    if (hasConfirmed) form.submit();
+  });
+});
 
 /***/ }),
 
