@@ -25,6 +25,9 @@
         </a>
     </div>
     <div class="d-flex align-items-center justify-content-end">
+         <a class="btn btn-warning ml-2 mr-2" href="{{route('admin.posts.edit', $post)}}">
+             <i class="fa-solid fa-pencil mr-2"></i>modifica
+         </a>
          <form action="{{ route('admin.posts.destroy', $post->id ) }}" method="POST" class="delete-form">
             @csrf
             @method('DELETE')
