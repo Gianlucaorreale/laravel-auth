@@ -5,5 +5,5 @@
     <h1>Nuovo Post</h1>
   </header>
   <hr>
-
+  @include('includes.admin.posts.form')
 @endsection

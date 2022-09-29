@@ -4,7 +4,7 @@
         <div class="col-12">
            <div class="form-group">
                <label for="title">Titolo</label>
-               <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}" 
+               <input type="text" class="form-control" id="title" name="title" value="{{old('title', $post->title)}}" 
                required minlenght="5">
                
            </div>
@@ -13,14 +13,14 @@
            <div class="form-group">
                <label for="content">Contenuto</label>
                <textarea class="form-control" id="content" name="content" 
-               required >{{old('content')}}</textarea>
+               required >{{old('content', $post->content)}}</textarea>
                
            </div>
         </div>
         <div class="col-12">
            <div class="form-group">
                <label for="image">Immagine</label>
-               <input type="url" class="form-control" id="image" name="image" value="{{old('image')}}"
+               <input type="url" class="form-control" id="image" name="image" value="{{old('image', $post->image)}}"
                 >
                
            </div>
