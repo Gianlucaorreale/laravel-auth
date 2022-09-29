@@ -1,4 +1,10 @@
+@if($post->exists)
+<form action="{{ route('admin.posts.update', $post) }}" method="POST">
+    @method('PUT')
+@else
 <form action="{{ route('admin.posts.store') }}" method="POST">
+@endif
+
      @csrf
      <div class="row">
         <div class="col-12">
