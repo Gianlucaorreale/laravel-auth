@@ -39,6 +39,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=> 'required|string|unique:posts',
+            'content'=> 'required|string',
+            'image'=> 'nullable|url'
+        ],
+        
+        [
+            'title.required'=> 'Il titolo è obbligatorio',
+            'title.unique'=> 'Esiste già un post dal titolo $request->title',
+            'image.url'=> 'Url dell\'immagine non valido'
+        ]);
+
         $data = $request->all();
 
         $post = new Post();
@@ -91,7 +103,7 @@ class PostController extends Controller
         $data['slug'] = Str::slug($data['title'], '-');
 
         $post-> update($data);
-        
+
         return redirect()->route('admin.posts.show', $post)
                ->with('message', 'Post modificato con successo')
                ->with('type', 'success');
