@@ -1,8 +1,8 @@
 @if($post->exists)
-<form action="{{ route('admin.posts.update', $post) }}" method="POST">
+<form action="{{ route('admin.posts.update', $post) }}" method="POST" novalidate>
     @method('PUT')
 @else
-<form action="{{ route('admin.posts.store') }}" method="POST">
+<form action="{{ route('admin.posts.store') }}" method="POST" novalidate>
 @endif
 
      @csrf
