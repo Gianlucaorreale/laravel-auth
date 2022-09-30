@@ -52,7 +52,8 @@ class PostController extends Controller
             'title.required'=> 'Il titolo è obbligatorio',
             'content.required'=> 'Devi scrivere il contenuto del post',
             'title.unique'=> 'Esiste già un post dal titolo $request->title',
-            'image.url'=> 'Url dell\'immagine non valido'
+            'image.url'=> 'Url dell\'immagine non valido',
+            'category_id.exists'=>'Non esiste una categoria associabile'
         ]);
 
         $data = $request->all();
