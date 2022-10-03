@@ -27,6 +27,23 @@
                  </select>
             </div>
         </div>
+        
+        @if(count($tags))
+        <div class="col-12">
+          <hr>
+             <fieldset>
+                <h4>Tags</h4>
+                 @foreach($tags as $tag)
+                   <div class="form-check form-check-inline">
+                      <input type="checkbox" class="form-check-input" id="inlineCheckbox1">
+                      <label class="form-check-label" for="inlineCheckBox1">{{$tag->label}}</label>
+                   </div>
+                 @endforeach
+              </fieldset>
+           <hr>
+        </div>
+        @endif
+        
         <div class="col-12">
            <div class="form-group">
                <label for="content">Contenuto</label>
@@ -44,8 +61,7 @@
            </div>
         </div>
     </div>
-
-  <hr>
+    <hr>
   <footer class="d-flex justify-content-between">
     <a class="btn btn-secondary" href="{{route('admin.posts.index')}}">
         <i class="fa-solid fa-rotate-left mr-2"></i>Indietro
